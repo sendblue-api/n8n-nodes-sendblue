@@ -1,0 +1,54 @@
+{
+  "name": "n8n-nodes-sendblue",
+  "version": "0.1.0",
+  "description": "Send messages and read message history, delivery status, and sending lines with Sendblue.",
+  "license": "MIT",
+  "homepage": "https://github.com/sendblue-api/n8n-nodes-sendblue",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "Sendblue",
+    "email": "support@sendblue.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sendblue-api/n8n-nodes-sendblue.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease",
+    "test": "npm run build && node --test tests/*.test.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/SendblueApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Sendblue/Sendblue.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.33.1",
+    "eslint": "9.29.0",
+    "prettier": "3.8.3",
+    "release-it": "20.2.0",
+    "typescript": "5.9.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=22.16"
+  }
+}
